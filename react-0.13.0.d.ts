@@ -502,5 +502,6 @@ declare module 'react' {
     function isValidElement(element: any): boolean;
     function unmountComponentAtNode(container: Element): boolean;
     function initializeTouchEvents(shouldUseTouch: boolean): void;
-
+    function findDOMNode(component: Component<any, any>): Element;
+    function findDOMNode<TElement extends Element>(component: Component<any, any>): TElement;
 }
