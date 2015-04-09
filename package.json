@@ -1,0 +1,17 @@
+{
+  "name": "cc",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "~0.13.1"
+  },
+  "devDependencies": {
+    "jsx-loader": "~0.13.1",
+    "webpack": "~1.8.2",
+    "webpack-dev-server": "~1.8.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --progress --colors --port 8080",
+    "build": "webpack -p"
+  }
+}
