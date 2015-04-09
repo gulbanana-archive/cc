@@ -6,8 +6,9 @@
     "react": "~0.13.1"
   },
   "devDependencies": {
-    "awesome-typescript-loader": "^0.2.4",
     "jsx-loader": "~0.13.1",
+    "jsx-typescript": "^1.4.0",
+    "ts-loader": "^0.3.3",
     "webpack": "~1.8.2",
     "webpack-dev-server": "~1.8.0"
   },

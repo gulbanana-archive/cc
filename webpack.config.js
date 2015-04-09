@@ -11,7 +11,7 @@ module.exports = {
 			loader: 'jsx-loader?insertPragma=React.DOM&Harmony'
 		},{
 			test: /\.ts$/,
-			loader: 'awesome-typescript-loader'
+			loader: 'ts-loader?compiler=jsx-typescript'
 		}]
 	},
 	externals: {
