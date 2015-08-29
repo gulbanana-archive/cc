@@ -1,4 +1,5 @@
-﻿import React = require('react');
+﻿/// <reference path="typings/tsd.d.ts" />
+import React = require('react');
 import Scene = require('./components/Scene');
 import art = require('./art');
 

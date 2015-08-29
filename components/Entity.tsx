@@ -1,4 +1,5 @@
-﻿import React = require('react');
+﻿/// <reference path="../typings/tsd.d.ts" />
+import React = require('react');
 
 class Entity extends React.Component<{name: string; art: string[]}, any> {
 	render() {
