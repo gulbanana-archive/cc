@@ -12,7 +12,6 @@
     "webpack-dev-server": "^1.10.1"
   },
   "scripts": {
-    "start": "webpack-dev-server --progress --colors --port 8080",
-    "build": "webpack -p"
+    "start": "webpack-dev-server --hot --inline --progress --colors --port 8080"
   }
 }

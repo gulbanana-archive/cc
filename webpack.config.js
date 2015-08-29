@@ -1,3 +1,5 @@
+var webpack = require("webpack");
+
 module.exports = {
 	entry: './index.ts',
 	output: {
@@ -16,5 +18,8 @@ module.exports = {
 	},
 	resolve: {
 		extensions: ['', '.js', '.tsx', '.ts']
-	}
+	},
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin()
+    ]
 }
