@@ -7,17 +7,14 @@ module.exports = {
 	},
 	module: {
 		loaders: [{
-			test: /\.jsx$/,
-			loader: 'jsx-loader?insertPragma=React.DOM&Harmony'
-		},{
-			test: /\.ts$/,
-			loader: 'ts-loader?compiler=jsx-typescript'
+			test: /\.tsx?$/,
+			loader: 'ts-loader'
 		}]
 	},
 	externals: {
 		'react': 'React'
 	},
 	resolve: {
-		extensions: ['', '.js', '.jsx', '.ts']
+		extensions: ['', '.js', '.tsx', '.ts']
 	}
 }
