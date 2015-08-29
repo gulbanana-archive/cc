@@ -1,11 +1,9 @@
-var webpack = require("webpack");
-
 module.exports = {
 	entry: './index.ts',
 	output: {
 		filename: 'app.js',
 		path: 'assets',
-		publicPath: '/assets/'
+		publicPath: 'http://localhost:8080/assets/'
 	},
 	module: {
 		loaders: [{
@@ -18,8 +16,5 @@ module.exports = {
 	},
 	resolve: {
 		extensions: ['', '.js', '.tsx', '.ts']
-	},
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin()
-    ]
+	}
 }
