@@ -40,9 +40,8 @@ class Scene extends React.Component<Props, State> {
         var y = this.state.height / 2;
 
         return <div style={ { height: '90vh' } }>{this.props.entities.map((e) => {
-            var s = { position: 'absolute', left: x, top: y }
             x += widthPerEntity;
-            return <div style={s} ><Entity name={e.name} art={e.art} /></div>;
+            return <div style={ { position: 'absolute', left: x-widthPerEntity, top: y } }><Entity name={e.name} art={e.art} /></div>;
         })}</div>;
 	}
 }
