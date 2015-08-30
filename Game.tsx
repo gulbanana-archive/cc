@@ -1,6 +1,5 @@
-﻿/// <reference path="typings/tsd.d.ts" />
-import React = require('react');
-import Scene = require('./components/Scene');
+﻿import React = require('react');
+import Scene = require('./Components/Scene');
 import art = require('./art');
 
 export class Game {
@@ -20,9 +19,6 @@ export class Game {
 	_update() {
 		if (this._state.entities.length < 5) {
 			this._state.entities.push(this._createPlayer(this._state.entities.length));
-		} else {
-			var x = this._state.entities.shift()
-			this._state.entities.push(x);
 		}
 	}
 

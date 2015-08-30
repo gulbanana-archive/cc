@@ -1,7 +1,7 @@
-﻿/// <reference path="../typings/tsd.d.ts" />
-import React = require('react');
+﻿import React = require('react');
+import * as Model from '../Model.ts';
 
-class Entity extends React.Component<{name: string; art: string[]}, any> {
+export default class Actor extends React.Component<Model.Entity, any> {
 	render() {
         return <div style={ {  display: 'flex', flexDirection: 'column', alignItems: 'center' } }>
 		           <pre>{ this.props.art.join('\n') } </pre>
@@ -10,4 +10,3 @@ class Entity extends React.Component<{name: string; art: string[]}, any> {
 	}
 }
 
-export = Entity

@@ -1,12 +1,9 @@
-﻿/// <reference path="../typings/tsd.d.ts" />
-import React = require('react');
-import Entity = require('./Entity');
+﻿import React = require('react');
+import * as Model from '../Model.ts';
+import Actor from './Actor';
 
 interface Props {
-	entities: {
-		name: string;
-		art: string[]
-	}[]
+	entities: Model.Entity[];
 }
 
 interface State {
@@ -17,8 +14,10 @@ interface State {
 class Scene extends React.Component<Props, State> {
 	state = {
 		width: 0,
-		height: 0
-	}
+		height: 0,
+	} as State
+
+	actors = [] as { e: Model.Entity, p: Model.Position}[];
 
 	componentDidMount() {
 		this.updateDimensions()
@@ -31,18 +30,26 @@ class Scene extends React.Component<Props, State> {
 
 	updateDimensions() {
 		var e = React.findDOMNode(this);
-        this.setState({ width: e.clientWidth, height: e.clientHeight });
+		this.actors = [];
+		this.setState({ width: e.clientWidth, height: e.clientHeight });
     }
 
     render() {
-        var n = this.props.entities.length;
-        var widthPerEntity = this.state.width / n;
-        var x = widthPerEntity / 2;
-        var y = this.state.height / 2;
-
-        return <div style={ { height: '90vh' } }>{this.props.entities.map((e) => {
-            x += widthPerEntity;
-            return <div style={ { position: 'absolute', left: x-widthPerEntity, top: y } }><Entity name={e.name} art={e.art} /></div>;
+		if (this.actors.length < this.props.entities.length) {
+			var n = this.props.entities.length;
+			var widthPerEntity = this.state.width / n;
+			var x = widthPerEntity / 2;
+			var y = this.state.height / 2;
+			
+			this.actors = this.props.entities.map((e) => {
+				var p = new Model.Position(x, y);
+				x += widthPerEntity;
+				return {e, p};
+			});
+		}
+		
+        return <div style={ { height: '90vh' } }>{this.actors.map((a) => {
+            return <div style={ { position: 'absolute', left: a.p.left, top: a.p.top } }><Actor {...a.e} /></div>;
         })}</div>;
 	}
 }
