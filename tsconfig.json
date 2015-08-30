@@ -8,6 +8,7 @@
     },
     "files": [
 		"./typings/tsd.d.ts",
+        "./typings/custom.d.ts",
         "index.ts"
 	]
 }

@@ -1,5 +1,5 @@
 ﻿import React = require('react');
-import * as Model from '../Model.ts';
+import * as Model from '../Model';
 
 export default class Actor extends React.Component<Model.Entity, any> {
 	render() {

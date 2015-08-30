@@ -1,2 +1,2 @@
-export {default as Entity} from './Model/Entity.ts';
-export {default as Position} from './Model/Position.ts';
+export {default as Entity} from './Model/Entity';
+export {default as Position} from './Model/Position';
